@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlaBlaController!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h1>BlaBlaCar API Search Engine</h1>
+    <form>
+        <h2>Travelling from</h2>
+        <label for="from_date">Departure between</label>
+        <input type="date" name="from_date" required>
+        <input type="date" name="to_date" required>
+        <br>
+        <label for="dep_country">Country</label>
+        <select name="dep_country" required>
+            <option value="FR">France</option>
+            <option value="SP">Spain</option>
+            <option value="UK">United Kingdom</option>
+            <option value="DE">Germany</option>
+        </select>
+        <br>
+        <label for="dep_lat">Latitude</label>
+        <input type="text" name="dep_lat" value="43.608292" required>
+        <label for="dep_lng">Longitude</label>
+        <input type="text" name="dep_lng" value="3.879600" required>
+        <br>
+        <h2>Destination</h2>
+        <label for="dest_country">Country</label>
+        <select name="dest_country">
+            <option value="FR">France</option>
+            <option value="SP">Spain</option>
+            <option value="UK">United Kingdom</option>
+            <option value="DE">Germany</option>
+        </select>
+        <br>
+        <label for="dest_lat">Latitude</label>
+        <input type="text" name="dest_lat" value="45.764042" required>
+        <label for="dest_lat">Longitude</label>
+        <input type="text" name="dest_lng" value="4.835659" required>
+        <br>
+        <input type="hidden" name="cursor">
+        <button type="submit" name="submit">Search</button>
+    </form>
+</div>
+    <hr>
+<div class="results">
+</div>
+    <div class="load-more-wrapper">
+        <button name="load-more" id="load-more" style="display: none">
+            Load More results
+        </button>
+    </div>
+
+{% endblock %}
